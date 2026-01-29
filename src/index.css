@@ -1,0 +1,34 @@
+:root {
+  /* --- Typographie & Base --- */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark; /* Force le mode sombre pour simplifier */
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1a1a1a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* --- Palette de Couleurs Sémantiques --- */
+  --color-timezone: #646cff; /* Bleu */
+  --color-calendar: #ff9f43; /* Orange Jaune */
+  --color-locale: #2ecc71; /* Vert */
+  --color-format: #e58e26; /* Orange Foncé */
+
+  /* --- UI Colors --- */
+  --bg-card: #242424;
+  --bg-control: #2a2a2a;
+  --bg-code: #111111;
+  --border-color: #444;
+  --text-muted: #aaa;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
