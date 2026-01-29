@@ -1,47 +1,20 @@
-/* --- Layout Principal --- */
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-/* --- Menu de Navigation --- */
-.menu {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  justify-content: center;
-}
-
-.menu button {
-  padding: 0.75rem 1.5rem;
-  background: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  color: inherit;
-}
-
-.menu button:hover {
-  background: var(--bg-hover, #f0f0f0);
-  border-color: #007bff;
-  color: rgb(66, 66, 66);
-}
-
-.menu button.active {
-  background: #007bff;
-  color: white;
-  border-color: #007bff;
-}
-
 h1 {
   font-size: 2.5em;
   line-height: 1.1;
   margin-bottom: 2rem;
+}
+
+.internation-handle-content {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .split-view {
@@ -62,7 +35,7 @@ h1 {
 
 .controls {
   flex: 1;
-  min-width: 300px; /* Un peu plus large pour le confort */
+  min-width: 300px;
   border: 1px solid var(--border-color);
 }
 
@@ -121,29 +94,30 @@ select:focus {
   background-color: rgba(255, 255, 255, 0.03);
   padding: 1rem;
   border-radius: 8px;
-  border-left: 4px solid #555; /* Défaut */
+  border-left: 4px solid #555;
 }
 
 .highlight-control label {
-  color: inherit; /* Prend la couleur du parent via style inline ou classe */
+  color: inherit;
 }
 
-/* Variantes de couleurs */
 .highlight-control.timezone {
   border-left-color: var(--color-timezone);
 }
+
 .highlight-control.calendar {
   border-left-color: var(--color-calendar);
 }
+
 .highlight-control.locale {
   border-left-color: var(--color-locale);
 }
+
 .highlight-control.format {
   border-left-color: var(--color-format);
 }
 
 /* --- Affichage des Résultats --- */
-/* Barre d'info (Zone | Cal | Langue) */
 .info-bar {
   margin-bottom: 1.5rem;
   color: var(--text-muted);
@@ -176,7 +150,7 @@ select:focus {
 .date-display {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 1.4rem;
-  color: var(--color-calendar); /* Couleur par défaut */
+  color: var(--color-calendar);
   font-weight: 600;
   word-break: break-all;
   margin: 0.5rem 0;
@@ -187,33 +161,69 @@ select:focus {
 .code-block {
   background: var(--bg-code);
   padding: 1rem;
-  border-radius: 6px;
-  font-family: monospace;
-  font-size: 0.85rem;
+  border-radius: 8px;
   overflow-x: auto;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.9rem;
+  color: #a0a9f0;
   border: 1px solid #333;
-  color: #ddd;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.code-block::-webkit-scrollbar {
+  height: 6px;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
 }
 
 .code-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.8rem;
-  font-family: monospace;
-  background: var(--bg-code);
-  padding: 1rem;
-  border-radius: 6px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   margin-top: 1rem;
-  font-size: 0.9rem;
 }
 
-.code-grid span {
-  color: #ccc;
+@media (max-width: 640px) {
+  .code-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split-view {
+    flex-direction: column;
+  }
+
+  .controls,
+  .results {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 1.4rem;
+}
+
+h3 {
+  color: #e0e0e0;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+h4 {
+  color: var(--text-muted);
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
 hr {
-  border: 0;
-  height: 1px;
-  background: #444;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid var(--border-color);
 }

@@ -1,14 +1,14 @@
-.page2-container {
+.manipulation-container {
   padding: 2rem;
   text-align: center;
 }
 
-.page2-container h1 {
+.manipulation-container h1 {
   color: #333;
   margin-bottom: 1rem;
 }
 
-.page2-container p {
+.manipulation-container p {
   color: #666;
   font-size: 1.1rem;
 }
