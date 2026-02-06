@@ -18,6 +18,8 @@
   --color-calendar: #ff9f43; /* Orange Jaune */
   --color-locale: #2ecc71; /* Vert */
   --color-format: #d527cc; /* Orange Foncé */
+  --color-dates: #646cff; /* Bleu (pour manipulation) */
+  --color-manipulation: #a78bfa; /* Violet (pour manipulation) */
 
   /* --- UI Colors --- */
   --bg-card: #242424;
