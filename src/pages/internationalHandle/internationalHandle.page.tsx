@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./internationalHandle.page.css";
-import SettingsPanel from "./components/SettingsPanel";
-import ResultsPanel from "./components/ResultsPanel";
+import SettingsPanel from "./components/settingsPanel.component";
+import ResultsPanel from "./components/resultsPanel.component";
 
 function InternationalHandlePage() {
   const [timezones] = useState(() => Intl.supportedValuesOf("timeZone"));

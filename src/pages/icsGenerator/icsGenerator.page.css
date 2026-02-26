@@ -1,0 +1,32 @@
+.ics-generator-content {
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.ics-generator-content h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ics-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .ics-container {
+    grid-template-columns: 1fr;
+  }
+}

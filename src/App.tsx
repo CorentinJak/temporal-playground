@@ -2,10 +2,11 @@ import { useState } from "react";
 import "./App.css";
 import InternationalHandlePage from "./pages/internationalHandle/internationalHandle.page";
 import ManipulationPage from "./pages/manipulation/manipulation.page";
+import IcsGeneratorPage from "./pages/icsGenerator/icsGenerator.page";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<
-    "international" | "manipulation"
+    "international" | "manipulation" | "ics"
   >("international");
 
   return (
@@ -27,12 +28,20 @@ function App() {
           >
             Manipulation
           </button>
+          <button
+            className={currentPage === "ics" ? "active" : ""}
+            onClick={() => setCurrentPage("ics")}
+          >
+            ICS Generator
+          </button>
         </nav>
 
         {currentPage === "international" ? (
           <InternationalHandlePage />
-        ) : (
+        ) : currentPage === "manipulation" ? (
           <ManipulationPage />
+        ) : (
+          <IcsGeneratorPage />
         )}
       </div>
     </>

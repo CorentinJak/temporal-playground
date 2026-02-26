@@ -1,0 +1,93 @@
+.ics-preview {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ics-preview h2 {
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-dates);
+  font-size: 1.3rem;
+}
+
+.preview-content {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--bg-code);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.preview-content pre {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #a0a9f0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  overflow-x: auto;
+}
+
+.preview-content::-webkit-scrollbar {
+  height: 6px;
+}
+
+.preview-content::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.btn-copy {
+  background: var(--bg-control);
+  border-color: var(--color-dates);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.btn-copy:hover {
+  background: var(--color-dates);
+  box-shadow: 0 0 8px rgba(100, 108, 255, 0.4);
+}
+
+.btn-download {
+  background: var(--bg-control);
+  border-color: var(--color-locale);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.btn-download:hover {
+  background: var(--color-locale);
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+}
+
+@media (max-width: 768px) {
+  .ics-preview {
+    height: auto;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+}

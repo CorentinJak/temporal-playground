@@ -1,5 +1,5 @@
 import { type Modification, getModifiedZdt, updateModification } from "./utils";
-import ModificationControls from "./ModificationControls.tsx";
+import ModificationControls from "./modificationControls.component";
 
 interface ZonedDateTimeBlockProps {
   readonly baseZdt: Temporal.ZonedDateTime;

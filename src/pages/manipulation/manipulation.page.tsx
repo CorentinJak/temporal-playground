@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./manipulation.page.css";
 import type { Modification } from "./components/utils";
-import ZonedDateTimeBlock from "./components/ZonedDateTimeBlock";
-import CustomDateBlock from "./components/CustomDateBlock";
-import TimeDifferenceBlock from "./components/TimeDifferenceBlock";
-import RoundingBlock from "./components/RoundingBlock";
-import ComparingAndSortingBlock from "./components/ComparingAndSortingBlock";
+import ZonedDateTimeBlock from "./components/zonedDateTimeBlock.component";
+import CustomDateBlock from "./components/customDateBlock.component";
+import TimeDifferenceBlock from "./components/timeDifferenceBlock.component";
+import RoundingBlock from "./components/roundingBlock.component";
+import ComparingAndSortingBlock from "./components/comparingAndSortingBlock.component";
 
 function ManipulationPage() {
   const [baseDate] = useState(() => Temporal.Now.plainDateISO());
