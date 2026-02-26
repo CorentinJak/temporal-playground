@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Temporal Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une application React + TypeScript + Vite pour explorer et tester les capacités de l'API Temporal avec différents cas d'usage.
 
-Currently, two official plugins are available:
+## Objectif
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ce projet permet de démontrer et tester les fonctionnalités de l'[API Temporal](https://tc39.es/proposal-temporal/) pour la manipulation moderne des dates et heures en JavaScript, ainsi que les capacités d'internationalisation (i18n).
 
-## React Compiler
+## Fonctionnalités
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📅 Générateur ICS
 
-## Expanding the ESLint configuration
+Créez des fichiers `.ics` (iCalendar) pour générer des événements calendrier. Entrez les détails d'un événement (titre, description, date, heure, lieu, fuseau horaire) et générez un fichier compatible avec les applications calendrier.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🕐 Manipulation de Dates
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Explorez les différentes opérations sur les dates et heures avec Temporal :
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Modification de ZonedDateTime** : Ajoutez ou soustrayez des années, mois, jours, heures, minutes et secondes
+- **Dates personnalisées** : Créez et manipulez des dates spécifiques
+- **Calcul de différences** : Mesurez l'écart entre deux dates/heures
+- **Arrondi temporel** : Arrondissez les dates à des unités spécifiques
+- **Comparaison et tri** : Comparez et triez des dates
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🌍 Gestion Internationale
+
+Testez l'internationalisation avec Temporal et Intl :
+
+- Sélectionnez différentes locales et fuseaux horaires
+- Explorez les formats de date/heure customisables
+- Testez différents systèmes de calendrier
+
+## Démarrage
+
+### Installation
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Développement
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+L'application sera accessible à `http://localhost:5173`
+
+### Build
+
+```bash
+npm run build
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Stack Technologique
+
+- **React 19** : Framework UI
+- **TypeScript** : Typage statique
+- **Vite** : Build tool moderne et rapide
+- **Temporal Polyfill** : Polyfill pour l'API Temporal
+- **Intl API** : Internationalisation native JavaScript
+
+## Structure du Projet
+
+```
+src/
+├── pages/
+│   ├── icsGenerator/       # Générateur de fichiers ICS
+│   ├── manipulation/       # Manipulation de dates avec Temporal
+│   └── internationalHandle/ # Gestion i18n avec Temporal et Intl
+└── App.tsx               # Application principale
 ```
