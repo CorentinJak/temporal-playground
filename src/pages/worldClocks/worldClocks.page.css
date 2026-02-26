@@ -1,0 +1,46 @@
+.world-clocks-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.world-clocks-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.world-clocks-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.world-clocks-header h2 {
+  font-size: 2rem;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.clocks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .clocks-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .world-clocks-page {
+    padding: 1rem;
+  }
+}

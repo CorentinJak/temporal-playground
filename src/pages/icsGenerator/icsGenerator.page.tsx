@@ -33,14 +33,15 @@ function IcsGeneratorPage() {
 
     // Format for ICS (UTC format: 20260220T140000Z)
     const startUTC =
-      startZDT.toInstant().toString().replace(/[-:]/g, "").split(".")[0] + "Z";
+      startZDT.toInstant().toString().replaceAll(/[-:]/g, "").split(".")[0] +
+      "Z";
     const endUTC =
-      endZDT.toInstant().toString().replace(/[-:]/g, "").split(".")[0] + "Z";
+      endZDT.toInstant().toString().replaceAll(/[-:]/g, "").split(".")[0] + "Z";
 
     // Get current timestamp for DTSTAMP
     const now = Temporal.Now.zonedDateTimeISO();
     const dtstamp =
-      now.toInstant().toString().replace(/[-:]/g, "").split(".")[0] + "Z";
+      now.toInstant().toString().replaceAll(/[-:]/g, "").split(".")[0] + "Z";
     const uid = now.toInstant().epochNanoseconds.toString();
 
     const icsContent = `BEGIN:VCALENDAR
@@ -74,8 +75,6 @@ END:VCALENDAR`;
 
   return (
     <div className="ics-generator-content">
-      <h1>Générateur d'invite ICS</h1>
-
       <div className="ics-container">
         <EventForm eventData={eventData} setEventData={setEventData} />
         <IcsPreview icsContent={generateICS()} onDownload={downloadICS} />

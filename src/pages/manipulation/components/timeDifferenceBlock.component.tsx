@@ -39,19 +39,15 @@ export default function TimeDifferenceBlock({
               type="date"
               value={targetZdt.toPlainDate().toString()}
               onChange={(e) => {
-                try {
-                  const newDate = Temporal.PlainDate.from(e.target.value);
-                  const newZdt = newDate
-                    .toPlainDateTime({
-                      hour: targetZdt.hour,
-                      minute: targetZdt.minute,
-                      second: targetZdt.second,
-                    })
-                    .toZonedDateTime(targetZdt.timeZoneId);
-                  setTargetZdt(newZdt);
-                } catch {
-                  // Invalid date input, ignore
-                }
+                const newDate = Temporal.PlainDate.from(e.target.value);
+                const newZdt = newDate
+                  .toPlainDateTime({
+                    hour: targetZdt.hour,
+                    minute: targetZdt.minute,
+                    second: targetZdt.second,
+                  })
+                  .toZonedDateTime(targetZdt.timeZoneId);
+                setTargetZdt(newZdt);
               }}
             />
           </div>
@@ -63,18 +59,12 @@ export default function TimeDifferenceBlock({
               type="time"
               value={`${String(targetZdt.hour).padStart(2, "0")}:${String(targetZdt.minute).padStart(2, "0")}`}
               onChange={(e) => {
-                try {
-                  const [hours, minutes] = e.target.value
-                    .split(":")
-                    .map(Number);
-                  const newZdt = targetZdt.with({
-                    hour: hours,
-                    minute: minutes,
-                  });
-                  setTargetZdt(newZdt);
-                } catch {
-                  // Invalid time input, ignore
-                }
+                const [hours, minutes] = e.target.value.split(":").map(Number);
+                const newZdt = targetZdt.with({
+                  hour: hours,
+                  minute: minutes,
+                });
+                setTargetZdt(newZdt);
               }}
             />
           </div>

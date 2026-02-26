@@ -63,10 +63,7 @@ export default function ResultsPanel({
         <h3>For the user (toLocaleString)</h3>
 
         <pre className="code-block">
-          {`zdt.toLocaleString(
-              locale === "undefined" ? undefined : "${locale}",
-              ${JSON.stringify(formattingOptions, null, 2)}
-            )`}
+          {`zdt.toLocaleString(\n${locale},\n${JSON.stringify(formattingOptions, null, 2)}\n)`}
         </pre>
 
         <p className="date-display">
@@ -88,13 +85,50 @@ export default function ResultsPanel({
 
       <div className="result-block highlight-result">
         <h3>Static values</h3>
-        <div style={{ marginBottom: "1rem" }}>
+        <div>
           <h4>ISO Standard (Default)</h4>
+          <p className="code-block">zonedDateTime.toString()</p>
           <p className="code-block">{zdt.toString()}</p>
         </div>
         <div>
           <h4>UTC Instant</h4>
+          <p className="code-block">zonedDateTime.toInstant().toString()</p>
           <p className="code-block">{zdt.toInstant().toString()}</p>
+        </div>
+        <div>
+          <h4>PlainDate</h4>
+          <p className="code-block">zonedDateTime.toPlainDate().toString()</p>
+          <p className="code-block">{zdt.toPlainDate().toString()}</p>
+        </div>
+        <div>
+          <h4>PlainTime</h4>
+          <p className="code-block">zonedDateTime.toPlainTime().toString()</p>
+          <p className="code-block">{zdt.toPlainTime().toString()}</p>
+        </div>
+        <div>
+          <h4>PlainDateTime</h4>
+          <p className="code-block">
+            zonedDateTime.toPlainDateTime().toString()
+          </p>
+          <p className="code-block">{zdt.toPlainDateTime().toString()}</p>
+        </div>
+        <div>
+          <h4>PlainYearMonth</h4>
+          <p className="code-block">
+            zonedDateTime.toPlainDate().toPlainYearMonth().toString()
+          </p>
+          <p className="code-block">
+            {zdt.toPlainDate().toPlainYearMonth().toString()}
+          </p>
+        </div>
+        <div>
+          <h4>PlainMonthDay</h4>
+          <p className="code-block">
+            zonedDateTime.toPlainDate().toPlainMonthDay().toString()
+          </p>
+          <p className="code-block">
+            {zdt.toPlainDate().toPlainMonthDay().toString()}
+          </p>
         </div>
       </div>
     </div>

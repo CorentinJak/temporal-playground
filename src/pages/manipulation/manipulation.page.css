@@ -70,6 +70,7 @@ h1 {
   border: 1px solid #333;
   margin: 0.5rem 0;
   line-height: 1.4;
+  text-align: left;
 }
 
 .code-block::-webkit-scrollbar {

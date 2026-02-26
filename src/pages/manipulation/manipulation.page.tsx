@@ -32,8 +32,6 @@ function ManipulationPage() {
 
   return (
     <div className="manipulation-content">
-      <h1>Tests de manipulation Temporal</h1>
-
       <div className="info-bar">
         <span>
           Aujourd'hui:{" "}
