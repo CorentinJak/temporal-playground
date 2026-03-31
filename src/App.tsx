@@ -4,8 +4,9 @@ import InternationalHandlePage from "./pages/internationalHandle/internationalHa
 import ManipulationPage from "./pages/manipulation/manipulation.page";
 import IcsGeneratorPage from "./pages/icsGenerator/icsGenerator.page";
 import WorldClocksPage from "./pages/worldClocks/worldClocks.page";
+import DatePickerPage from "./pages/datepicker/datepicker.page";
 
-type PageType = "international" | "manipulation" | "ics" | "worldClocks";
+type PageType = "international" | "manipulation" | "ics" | "worldClocks" | "datepicker";
 
 interface PageConfig {
   id: PageType;
@@ -33,6 +34,11 @@ const PAGES: PageConfig[] = [
     id: "worldClocks",
     label: "World Clocks",
     component: WorldClocksPage,
+  },
+  {
+    id: "datepicker",
+    label: "Date Picker",
+    component: DatePickerPage,
   },
 ];
 
@@ -67,3 +73,5 @@ function App() {
 }
 
 export default App;
+
+
